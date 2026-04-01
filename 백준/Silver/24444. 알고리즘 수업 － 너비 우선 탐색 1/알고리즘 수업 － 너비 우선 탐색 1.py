@@ -1,17 +1,15 @@
 from collections import deque
 import sys
+input = sys.stdin.readline
 # 1. 입력 받기 (시간 단축을 위해 sys.stdin.readline 사용)
 # N: 정점 수, M: 간선 수, R: 시작 정점
-inp = map(int, sys.stdin.read().split())
-N = next(inp)
-M = next(inp)
-R = next(inp)
+N, M, R = map(int, input().split())
+
 # 2. 그래프 만들기 (1번부터 N번까지)
 graph = [[] for _ in range(N + 1)]
 
 for _ in range(M):
-    u = next(inp)
-    v = next(inp)
+    u, v = map(int, input().split())
     graph[u].append(v)
     graph[v].append(u)
 
@@ -47,4 +45,5 @@ def bfs(start):
 bfs(R)
 
 # 6. 결과 출력 (1번 노드부터 N번 노드까지의 순서)
-sys.stdout.write('\n'.join(map(str, visited[1:])))
+for i in range(1, N + 1):
+    print(visited[i])
