@@ -45,5 +45,4 @@ def bfs(start):
 bfs(R)
 
 # 6. 결과 출력 (1번 노드부터 N번 노드까지의 순서)
-for i in range(1, N + 1):
-    print(visited[i])
+sys.stdout.write('\n'.join(map(str, visited[1:])))
