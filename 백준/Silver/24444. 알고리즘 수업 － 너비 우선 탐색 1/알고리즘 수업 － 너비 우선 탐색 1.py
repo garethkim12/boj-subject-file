@@ -1,15 +1,17 @@
 from collections import deque
 import sys
-input = sys.stdin.readline
 # 1. 입력 받기 (시간 단축을 위해 sys.stdin.readline 사용)
 # N: 정점 수, M: 간선 수, R: 시작 정점
-N, M, R = map(int, input().split())
-
+inp = map(int, sys.stdin.read().split())
+N = next(inp)
+M = next(inp)
+R = next(inp)
 # 2. 그래프 만들기 (1번부터 N번까지)
 graph = [[] for _ in range(N + 1)]
 
 for _ in range(M):
-    u, v = map(int, input().split())
+    u = next(inp)
+    v = next(inp)
     graph[u].append(v)
     graph[v].append(u)
 
