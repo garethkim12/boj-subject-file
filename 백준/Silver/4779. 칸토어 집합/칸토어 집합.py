@@ -12,9 +12,11 @@ def getContor(size):
     side  = getContor(new_size)
     return side + center + side
 
-total = sys.stdin.read().split()
-for line in total:
-    N = int(line)
-    size = 3 ** N
-    result_str = getContor(size)
-    print(result_str)
+while True:
+    try:
+        N = int(input())
+        size = 3 ** N 
+        result_str = getContor(size)
+        print(result_str)
+    except EOFError:
+            break
